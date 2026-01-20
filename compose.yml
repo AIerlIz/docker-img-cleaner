@@ -2,7 +2,7 @@ services:
   # 定义一个名为 'docker-image-cleaner' 的服务
   docker-image-cleaner:
     # 指示 Docker Compose 从当前目录下的 Dockerfile 构建镜像
-    build: .
+    images: aierliz/docker-image-cleaner
     # 为容器指定一个固定的名称，方便管理
     container_name: docker-cleanup-scheduler
     # 设置容器的重启策略，始终重启
@@ -13,12 +13,11 @@ services:
     # 设置环境变量，这些变量会被传递给容器内的脚本
     environment:
       # --- ⚠️ 替换为你的 Telegram Bot Token ---
-      - BOT_TOKEN=5661030527:AAHHiKVCk-WFVOzjjmiZQLZz5dMvKejniTw
+      - BOT_TOKEN=5645230527:AAHHiKVCk-WFVOzjcdxQLZz5dawvKejniTw
       # --- ⚠️ 替换为你的 Telegram Chat ID ---
-      - CHAT_ID=1194965358
+      - CHAT_ID=1196221358
       # --- 可选：覆盖脚本中默认的清理时长 (例如 "24h", "168h") ---
       # 如果不设置，脚本将使用其内部默认值 (例如 "72h")
       - DURATION=0h
       # --- 可选：覆盖 Dockerfile 中默认的 cron 表达式 (例如 "0 0 * * *" 每天午夜运行) ---
       # - CRON_SCHEDULE="0 0 * * *"
-    # Dockerfile 中的 CMD 命令已经负责启动 cron 服务，所以这里不需要额外的 command
