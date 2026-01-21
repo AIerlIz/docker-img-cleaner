@@ -11,4 +11,4 @@ services:
       - CHAT_ID=xxxxxxxx
       - DURATION=0h
       - TZ=Asia/Shanghai
-      # - CRON_SCHEDULE="0 0 * * *"
+      - CRON_SCHEDULE=* * * * *
