@@ -29,3 +29,4 @@ jobs:
         tags: |
           ${{ env.DOCKER_IMAGE }}:latest
           ${{ env.DOCKER_IMAGE }}:${{ github.ref_name }}
+        platforms: linux/amd64,linux/arm64
