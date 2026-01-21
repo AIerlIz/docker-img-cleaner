@@ -1,6 +1,6 @@
 services:
-  docker-image-cleaner:
-    images: aierliz/docker-image-cleaner
+  docker-img-cleaner:
+    image: aierliz/docker-img-cleaner
     container_name: docker-cleanup-scheduler
     restart: always
     volumes:
