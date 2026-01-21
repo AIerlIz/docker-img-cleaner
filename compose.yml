@@ -3,6 +3,7 @@ services:
     image: aierliz/docker-img-cleaner
     container_name: docker-cleanup-scheduler
     restart: always
+    network_mode: bridge
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
